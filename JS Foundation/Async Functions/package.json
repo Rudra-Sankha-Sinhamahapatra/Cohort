@@ -1,0 +1,7 @@
+{
+  "type": "module",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "node": "^21.7.0"
+  }
+}
