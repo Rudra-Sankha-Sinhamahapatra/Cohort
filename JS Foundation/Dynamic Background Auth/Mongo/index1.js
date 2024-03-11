@@ -1,6 +1,7 @@
 const express = require("express");
 const jwt = require("jsonwebtoken");
 const mongoose = require("mongoose");
+const { type } = require("os");
 const jwtPassword = "123456";
 const port = 3000;
 
@@ -10,7 +11,7 @@ mongoose.connect(
 
 const User = mongoose.model("User", {
   name: String,
-  username: String,
+  username: {type:String, unique:true},
   password: String,
 });
 
@@ -20,24 +21,39 @@ app.use(express.json());
 async function userExists(username, password) {
   // should check in the database
   const user = await User.findOne({ username: username });
-  return user !== null;
+  return user!==null;
 }
-app.post("/signup", function (req, res) {
+app.post("/signup",async function (req, res) {
   const name = req.body.name;
   const username = req.body.username;
   const password = req.body.password;
 
-  const userDetails = new User({
-    name: name,
-    username: username,
-    password: password,
-  });
-  userDetails
-    .save()
-    .then((doc) => {
-      res.send(doc);
+  const existingUser=await User.findOne({username:username});
+  if(existingUser){
+ res.status(403).json({
+  msg:"User Already Exists",
+ });
+  };
+
+  if(!existingUser){
+  try {
+    const userDetails = new User({
+      name: name,
+      username: username,
+      password: password,
+    });
+    const savedUser=await userDetails.save();
+    res.json({
+      user:savedUser,
     })
-    .catch((err) => console.log(err));
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      msg:"Error !",
+    })
+  }
+}
+   
 });
 
 app.post("/signin", async function (req, res) {
@@ -54,6 +70,29 @@ app.post("/signin", async function (req, res) {
   return res.json({
     token,
   });
+});
+
+app.post("/deleteuser",async function(req,res){
+const username=req.body.username;
+const password=req.body.password;
+try {
+  const user=await User.findOneAndDelete({username:username,password:password});
+ if(user){
+  const allUsers=await User.find({});
+  res.send(allUsers);
+ }
+ else{
+  return res.status(404).json({
+    msg: "User not found or could not be deleted",
+  });
+ }
+} catch (error) {
+  return res.status(403).json(
+    {
+ msg:"Error!"
+    }
+  );
+}
 });
 
 
