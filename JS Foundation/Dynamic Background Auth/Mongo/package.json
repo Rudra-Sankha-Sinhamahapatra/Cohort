@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "express": "^4.18.3",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.4.0",
+    "mongoose": "^8.2.1",
+    "node": "^21.7.1"
+  }
+}
