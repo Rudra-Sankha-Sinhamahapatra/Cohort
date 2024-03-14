@@ -11,7 +11,7 @@ mongoose.connect(
 
 const User = mongoose.model("User", {
   name: String,
-  username: {type:String, unique:true},
+  username:String,
   password: String,
 });
 
