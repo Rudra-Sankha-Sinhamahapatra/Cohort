@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "description": "This is a simple todo app backend",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Rudra Sankha Sinhamahapatra",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "mongoose": "^8.3.2",
     "zod": "^3.23.4"
