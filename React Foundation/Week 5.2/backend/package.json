@@ -1,0 +1,16 @@
+{
+  "name": "todo-backend",
+  "version": "1.0.0",
+  "description": "This is a simple todo app backend",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rudra Sankha Sinhamahapatra",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "zod": "^3.23.4"
+  }
+}
