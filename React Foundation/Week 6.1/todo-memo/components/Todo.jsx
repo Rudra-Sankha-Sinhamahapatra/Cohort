@@ -1,5 +1,10 @@
+import { useEffect } from "react"
 
-export function Todo({title},{description}){
+export function Todo({title,description}){
+    useEffect(()=>{
+        return()=>{
+        alert("unmount");
+    }},[])
 return(
     <>
     <div>
