@@ -7,14 +7,14 @@ todos=[
 ]
 */
 
-export function Todos({todos}){
+export function Todos({todos},{index}){
     return(
         <>
-        <div>
-         {todos.map(function(todo){
+        <div key={index}>
+         {todos.map(function(todo,id){
             return(
-                <>
-                <div>
+                <> 
+                <div key={id}>
                     <h1>{todo.title}</h1>
                     <h2>{todo.description}</h2>
                     <button>{todo.completed==true?"Completed":"Mark as Complete"}</button>
