@@ -7,6 +7,8 @@ const [input,setInputValue]=useState(0);
 
 //we can also use useEffect instead of useMemo as different codebases use different approaches
 //useMemo is a hook provided by React that memoizes the result of a function or computation.
+//useMemo can also be used to perform high computations
+
 let sum=useMemo(()=>{
   console.log('memo got called')
   let summ=0;
