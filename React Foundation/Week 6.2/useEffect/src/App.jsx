@@ -7,8 +7,8 @@ function App() {
 
   useEffect(()=>{
 const res=axios.get('https://sum-server.100xdevs.com/todos')
-.then(function(response){
-  setTodos(response.data.todos)
+.then(async function(response){
+ await setTodos(response.data.todos)
 })
   },[])
   return (
