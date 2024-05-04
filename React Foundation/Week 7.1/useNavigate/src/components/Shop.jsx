@@ -1,4 +1,4 @@
-export function Shop(){
+export default function Shop(){
     return(
         <>
         <ul>
