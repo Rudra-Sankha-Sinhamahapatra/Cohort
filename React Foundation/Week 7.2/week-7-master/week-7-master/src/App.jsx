@@ -40,7 +40,7 @@ function EvenCountRenderer() {
 }
 
 function Buttons() {
-  const [count,setCount]=useRecoilState(countAtom);
+const setCount=useSetRecoilState(countAtom);
   console.log("buttons re-rendererd");
 
   return <div>
