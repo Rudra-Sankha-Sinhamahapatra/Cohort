@@ -1,0 +1,96 @@
+.main{
+    height: fit-content;
+    width: fit-content;
+}
+
+.blue{
+    height: 150px;
+    width: 1500px;
+    background-color: aqua;
+    margin: 0px;
+    padding: 0px;
+}
+
+.img{
+    position: relative;
+    top: 100px;
+    left: 550px;
+    height: 100px;
+    width: 100px;
+}
+
+.name{
+    position: relative;
+    left: 550px;
+    top: 60px;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+}
+
+.namep{
+    margin: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+    padding-left: 10px;
+}
+
+.nameh{
+    margin: 0px;
+    padding: 0px;
+}
+
+.namep1{
+    position: relative;
+    top: 30px;
+    left: 280px;
+}
+
+.info{
+    height: 150px;
+    width: 1500px;
+    margin: 0px;
+    padding: 0px;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: 120px;
+    right: 100px;
+    justify-content: space-evenly;
+    border-top: solid black;
+}
+
+.followers{
+  display: flex;
+  flex-direction: column;  
+  padding-left: 0px;
+  margin-left: 0px;
+  position: relative;
+  right: 80px;
+}
+
+.likes{
+    position: relative;
+    right: 80px;
+}
+
+.photos{
+    position: relative;
+    right: 80px;
+}
+
+.rulep{
+    margin: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-right: 20px;
+    padding-left: 0px;
+}
+
+.ruleh{
+    margin: 0px;
+    padding: 0px;
+    padding-left: 0px;
+}
