@@ -11,6 +11,7 @@ import {
   messagingAtom,
   networkAtom,
   notificationsAtom,
+  totalNotificationCount,
 } from "./atoms/atoms";
 
 function App() {
@@ -28,6 +29,10 @@ function MyApp() {
   const [messagingCount, setMessagingCount] = useRecoilState(messagingAtom);
   const notificationCount = useRecoilValue(notificationsAtom);
   const jobsCount = useRecoilValue(jobsAtom);
+  const totalNotificationCount = useRecoilValue(totalNotificationCount);
+  const renderNot =
+    totalNotificationCount >= 99 ? "99+" : totalNotificationCount;
+
   return (
     <>
       <button>Home</button>
@@ -47,7 +52,7 @@ function MyApp() {
           setMessagingCount((messagingCount) => messagingCount + 1);
         }}
       >
-        Me
+        Me({renderNot})
       </button>
       <Apply />
     </>
@@ -64,7 +69,7 @@ function Apply() {
           setJobsCount((jobs) => jobs + 1);
         }}
       >
-        Apply
+        Apply Jobs
       </button>
     </>
   );
