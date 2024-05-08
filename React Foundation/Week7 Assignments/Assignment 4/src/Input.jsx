@@ -10,7 +10,7 @@ export function Input() {
   const generateParagraph = () => {
     let paragraph = "";
     for (let i = 0; i < num; i++) {
-      const randomIndex = Math.floor(Math.random() * words.length); // Generate a random index
+      const randomIndex = Math.floor(Math.random() * words.length); 
       paragraph += words[randomIndex] + " ";
     }
     setWord(paragraph.trim());
@@ -51,7 +51,7 @@ export function Input() {
           width: "100px",
           borderRadius: "30px",
         }}
-        onClick={generateParagraph} // Call generateParagraph function on button click
+        onClick={generateParagraph} 
       >
         Generate
       </button>

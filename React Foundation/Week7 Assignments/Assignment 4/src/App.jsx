@@ -7,7 +7,7 @@ function App() {
     <RecoilRoot>
       <Input />
     </RecoilRoot>
-  );
+  )
 }
 
 export default App;
