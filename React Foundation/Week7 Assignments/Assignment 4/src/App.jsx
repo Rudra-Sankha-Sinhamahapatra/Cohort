@@ -1,6 +1,6 @@
 import "./App.css";
 import { RecoilRoot } from "recoil";
-import { Input } from "./Input";
+import { Input } from "./components/Input";
 
 function App() {
   return (

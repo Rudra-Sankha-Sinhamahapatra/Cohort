@@ -1,5 +1,5 @@
 import { useRecoilState } from "recoil";
-import { inputAtom, wordAtom } from "./atoms";
+import { inputAtom, wordAtom } from "../atoms/atoms";
 
 const words = ["hi", "my", "name", "is", "for", "to", "random", "word"];
 
