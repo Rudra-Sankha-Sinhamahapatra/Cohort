@@ -1,3 +1,5 @@
-const JWT_SECRET=123
+const JWT_SECRET="rudra_server";
 
-module.exports=JWT_SECRET;
+module.exports={
+    JWT_SECRET
+};
