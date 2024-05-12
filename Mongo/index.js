@@ -5,7 +5,7 @@ const port=3000;
 
 app.use(express.json());
 
-mongoose.connect("mongodb+srv://rssmp120:BrUiBMCfzq7Vekcv@cluster0.nsofrmr.mongodb.net/user_app");
+mongoose.connect(process.env.MONGO_URL);
 
 
 const User = mongoose.model('Users', { name: String,email: String,password: String });

@@ -6,7 +6,7 @@ const jwtPassword = "123456";
 const port = 3000;
 
 mongoose.connect(
-  "mongodb+srv://rssmp120:BrUiBMCfzq7Vekcv@cluster0.nsofrmr.mongodb.net/user_app"
+  process.env.MONGO_URL
 );
 
 const User = mongoose.model("User", {
