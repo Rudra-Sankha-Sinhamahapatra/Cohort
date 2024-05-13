@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react";
-import { useIsOnline } from "./hooks/useIsOnline";
+import { useMousePointer} from "./hooks/useMousePointer";
 
 function App() {
-const isOnline=useIsOnline();
+const mousePointer=useMousePointer();
   return (
     <>
-   {isOnline?<div>You are online</div>:<div>You are offline,check your network</div>}
+   {<div>X:{mousePointer.x},Y:{mousePointer.y}</div>}
     </>
   );
 }
