@@ -18,7 +18,7 @@ function greet11(user:User):void{
 
 greet11(user);
 
-function isLegal(user:User):boolean{
+function isLegal11(user:User):boolean{
 if(user.age>18){
     return true;
 }
@@ -27,5 +27,5 @@ else{
 }
 }
 
-const answer=isLegal(user);
+const answer=isLegal11(user);
 console.log(answer);
