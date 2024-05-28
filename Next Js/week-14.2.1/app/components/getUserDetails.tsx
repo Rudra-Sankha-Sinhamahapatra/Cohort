@@ -1,7 +1,6 @@
-import { PrismaClient } from "@prisma/client";
+import client from '@/db'
 
 
-const client=new PrismaClient();
 
 export  async function getUserDetails(){
     try {
