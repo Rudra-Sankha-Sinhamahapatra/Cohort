@@ -4,7 +4,7 @@ import { BACKEND_URL } from "../config";
 
 // Define the user data interface
 interface UserData {
-    userId: string; // Adjust the type based on your actual data
+    userId: any; // Adjust the type based on your actual data
     // Add other fields here if needed
 }
 
