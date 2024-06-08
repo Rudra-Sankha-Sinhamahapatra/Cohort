@@ -1,15 +1,18 @@
-export default async function Blog() {
-    const res = await fetch('https://sum-server.100xdevs.com/todos')
+import revalidate from '../lib/action1';
+
+export default async function Home() {
+    
+const res = await fetch('https://sum-server.100xdevs.com/todos', { next: { tags: ['todos'] } })
 
     const data = await res.json();
-    const todos = data.todos;
+    revalidate()
 
-    console.log("todos",JSON.stringify(data) );
-    return <div>
-        {todos.map((todo: any) => <div key={todo.id}>
+    return(
+     <div>
+        {data.todos.map((todo: any) => <div key={todo.id}>
             {todo.title}
             {todo.description}
         </div>)}
     </div>
-    
+    )   
 }
