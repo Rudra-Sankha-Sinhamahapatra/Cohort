@@ -1,0 +1,119 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "My HonoOpenAPi App"
+  },
+  "components": {
+    "schemas": {
+
+    },
+    "parameters": {
+
+    }
+  },
+  "paths": {
+    "/user/{id}": {
+      "get": {
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "minLength": 3,
+              "maxLength": 10,
+              "example": "123456"
+            },
+            "required": true,
+            "name": "id",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieve the User",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 10,
+                      "example": "John Doe"
+                    },
+                    "age": {
+                      "type": "integer",
+                      "example": 12
+                    },
+                    "id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 10,
+                      "example": "24"
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "age",
+                    "id"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "minLength": 3,
+              "maxLength": 10,
+              "example": "123456"
+            },
+            "required": true,
+            "name": "id",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieve the User",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 10,
+                      "example": "John Doe"
+                    },
+                    "age": {
+                      "type": "integer",
+                      "example": 12
+                    },
+                    "id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 10,
+                      "example": "24"
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "age",
+                    "id"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
