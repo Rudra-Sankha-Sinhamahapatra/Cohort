@@ -1,9 +1,7 @@
 import { OpenAPIHono } from '@hono/zod-openapi';
 import { getUserRoute, postUserRoute } from './route';
 import { swaggerUI } from '@hono/swagger-ui';
-import { DefaultService } from '../generated';
 
-const response=await DefaultService.getUser("1");
 const app = new OpenAPIHono();
 
 
