@@ -1,0 +1,16 @@
+{
+  "name": "attack",
+  "version": "1.0.0",
+  "description": "attack",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "node dist/index.js",
+    "build": "tsc --b",
+    "start": "tsc --b & node dist/index.js"
+  },
+  "dependencies": {
+    "@types/axios": "^0.14.0",
+    "axios": "^1.7.2"
+  }
+}

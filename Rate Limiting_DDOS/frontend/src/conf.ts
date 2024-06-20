@@ -1,0 +1,1 @@
+export const VITE_SITE_KEY = import.meta.env.VITE_SITE_KEY as string;
