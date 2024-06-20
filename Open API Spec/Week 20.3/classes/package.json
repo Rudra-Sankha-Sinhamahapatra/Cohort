@@ -1,0 +1,18 @@
+{
+  "name": "classes",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc --b && node dist/index.js",
+    "dev": "node dist/index.js",
+    "ed":"tsc  --experimentalDecorators"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "helpful-decorators": "^2.1.0"
+  }
+}
