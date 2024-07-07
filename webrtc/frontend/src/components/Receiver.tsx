@@ -1,6 +1,7 @@
-import { useEffect } from "react"
+import { useEffect, useRef } from "react"
 
 export default function Receiver(){
+const videoRef=useRef<HTMLVideoElement>(null);
 
 useEffect(()=>{
 const socket=new WebSocket('ws://localhost:8080');
@@ -20,6 +21,16 @@ socket.onmessage=async (event)=>{
                 socket?.send(JSON.stringify({type:'iceCandidate',candidate:event.candidate}));
             }
         }
+
+        //receive a track
+        pc.ontrack=(event)=>{
+        console.log(event.track);
+        if(videoRef.current){
+            videoRef.current.srcObject=new MediaStream([event.track]);
+            videoRef.current.play();
+        }
+        }
+
         const answer=await pc.createAnswer(); //sdp
         await pc.setLocalDescription(answer);
         socket.send(JSON.stringify({type:'createAnswer',sdp:pc.localDescription}));
@@ -36,9 +47,9 @@ socket.onmessage=async (event)=>{
 
     return(
         <>
-        <div>
+        <div className="maindiv">
            Receiver
-
+          <video className="mainvid"  ref={videoRef} autoPlay/>
         </div>
         </>
     )
