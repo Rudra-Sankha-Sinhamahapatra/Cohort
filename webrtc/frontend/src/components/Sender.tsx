@@ -44,11 +44,12 @@ export default function Sender(){
         }
          }
 
+         const screen=await navigator.mediaDevices.getDisplayMedia({video:true,audio:true});
          //send a track
          const stream=await navigator.mediaDevices.getUserMedia({video:true,audio:false});
          pc.addTrack(stream.getVideoTracks()[0]);
          if(videoRef.current){
-            videoRef.current.srcObject=stream;
+            videoRef.current.srcObject=screen;
             videoRef.current.play();
         }
     }
