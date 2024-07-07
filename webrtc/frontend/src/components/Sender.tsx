@@ -51,6 +51,7 @@ export default function Sender(){
          if(videoRef.current){
             videoRef.current.srcObject=screen;
             videoRef.current.play();
+            console.log("Video Playing on sender")
         }
     }
 
