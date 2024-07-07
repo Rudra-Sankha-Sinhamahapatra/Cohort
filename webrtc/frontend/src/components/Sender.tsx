@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 
 export default function Sender(){
 
     const [socket,setSocket]=useState<WebSocket|null>(null);
-
+    const videoRef=useRef<HTMLVideoElement>(null);
     useEffect(()=>{
         const socket=new WebSocket('ws://localhost:8080');
         socket.onopen=()=>{
@@ -47,6 +47,10 @@ export default function Sender(){
          //send a track
          const stream=await navigator.mediaDevices.getUserMedia({video:true,audio:false});
          pc.addTrack(stream.getVideoTracks()[0]);
+         if(videoRef.current){
+            videoRef.current.srcObject=stream;
+            videoRef.current.play();
+        }
     }
 
     return(
@@ -54,6 +58,7 @@ export default function Sender(){
         <div>
             Sender
             <button onClick={startSendingVideo}>Send video</button>
+            <video ref={videoRef} autoPlay/>
         </div>
         </>
     )
