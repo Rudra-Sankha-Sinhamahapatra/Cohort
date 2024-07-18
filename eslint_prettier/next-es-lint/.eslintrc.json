@@ -1,5 +1,11 @@
 {
-  "extends": ["next/core-web-vitals","airbnb","airbnb-typescript","airbnb/hooks"],
+  "extends": [
+    "next/core-web-vitals",
+    "airbnb",
+    "airbnb-typescript",
+    "airbnb/hooks",
+    "prettier"
+  ],
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module",
