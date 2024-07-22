@@ -48,7 +48,7 @@ model Action {
 model AvailableAction {
   id String @id @default(uuid())
   name String
-  action Action[]
+  actions Action[]
 }
 
 model AvailableTrigger {
