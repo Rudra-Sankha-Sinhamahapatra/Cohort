@@ -10,7 +10,7 @@ describe('sum module', () => {
 
 describe('handle negative numbers correctly', () =>{
     it("sum of -1 and -2 is -3", () =>{
-        const finalAnswer=sum(1,2);
+        const finalAnswer=sum(-1,-2);
         expect(finalAnswer).toBe(-3);
     })
 })
