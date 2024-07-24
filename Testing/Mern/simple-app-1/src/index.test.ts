@@ -1,4 +1,4 @@
-import {describe, expect, test} from '@jest/globals';
+import {describe, expect, it, test} from '@jest/globals';
 import {sum} from './index';
 import { mul } from './index';
 
@@ -9,8 +9,9 @@ describe('sum module', () => {
 });
 
 describe('handle negative numbers correctly', () =>{
-    test("sum of -1 and -2 is -3", () =>{
-        expect(sum(-1,-2)).toBe(-3);
+    it("sum of -1 and -2 is -3", () =>{
+        const finalAnswer=sum(1,2);
+        expect(finalAnswer).toBe(-3);
     })
 })
 
