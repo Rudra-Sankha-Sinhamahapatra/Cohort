@@ -8,7 +8,7 @@ app.use(express.json());
 const sumInput = z.object({
     a: z.number(),
     b: z.number()
-})
+}) 
 
 app.post("/sum", async (req, res) => {
     const parsedResponse = sumInput.safeParse(req.body)
