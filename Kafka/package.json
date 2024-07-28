@@ -1,0 +1,20 @@
+{
+  "name": "kafka",
+  "version": "1.0.0",
+  "main": "index.js",
+
+  "scripts": {
+    "start": "tsc -b && node dist/index.js",
+    "produce": "tsc -b && node dist/producer.js",
+    "consume": "tsc -b && node dist/consumer.js",
+    "produce:user": "tsc -b && node dist/producer-user.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "kafkajs": "^2.2.4",
+    "typescript": "^5.5.4"
+  }
+}
